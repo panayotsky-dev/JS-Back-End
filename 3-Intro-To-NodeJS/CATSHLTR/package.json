@@ -1,13 +1,16 @@
 {
-  "name": "3-intro-to-nodejs",
+  "name": "catshltr",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node ./simpleServer.js"
+    "start": "nodemon ./index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
