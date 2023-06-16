@@ -1,0 +1,69 @@
+1.Pub/Sub CanvasPattern
+    2.Events
+3.Streams
+4.FS Module
+5.Debugging
+
+                Publish-Subscribe Pattern
+!    -Used to communicate messages between different system components
+  WITHOUT them KNOWING anything about each other's identitty
+    -Senders(publishers)DON'T program the messages to be SENT DIRECTLY to SPECIFIC RECEIVERS(subscribers)
+    -Subscribers express interest in One or More Events, and ONLY RECEIVE  messages that are of interest
+    -An intermediary (called a "message broker" or "event bus")
+        -Receives published messages
+        -Forwards them to the subscribers who are registered to receive them
+        -Scheme of messages looks like this
+
+            Publisher ->                                   -> Subscribers
+            Publisher ->   ->->->  [EVENT BUS]  ->->->     -> Subscribers
+            Publisher ->                                   -> Subscribers
+        
+        
+        Advantages:
+        -Decouple and Scale Independently
+            -Makes software more flexible
+        -Eliminate Polling
+            -Promotes faster response time and reduces the delivery latency
+        -Simplify Communication
+            -Reduces complexity by removing all the point-to-point connectionss with a single connection
+
+                    Module
+            |-----------------------------------|
+            |asdasd                             |
+            |asdasddfg  
+            |dgfdfg
+            |asd
+            |dgfgfdgfd
+            | eventBus.publish('user-added')
+            |----------------------------------|
+
+
+            //! Events are NOT ASYNCHRONOUS!
+
+
+                    Streams
+        -Collections of data that is not available at once
+            -Data may come continously in chunks
+        -Types:
+            -Readable - can only be read(process.stdin)
+            -Writeable - can only be written on (process.stdout)
+            -Dublex - both Readable and Writeable (TCP sockets/communication)
+            -Transform - the output is computed from the intput(zlib,crypto)
+        
+                    Readable Streams
+        -Functions:
+            -read() - get chunks from the stream 
+            -pause() - switch to paused mode 
+            -resume() - switc to flowing mode 
+        -Events - used when the stream is flowing
+            -data - chunk is available for reading
+            -end - no more data
+            -error - an exception has occurred
+                    Writable Streams
+        -Functions:
+            -write() - send chunks to the stream
+            -end() - close the stream
+        -Events 
+            -drain - stream can receive more data
+            -finish - all data has been flushed ( buffer is empty)
+            -error - an exception has occurred
