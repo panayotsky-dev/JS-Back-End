@@ -39,3 +39,33 @@
 14. Implement user manager login and register
     * add register method
     * add login method
+15. Hash password
+    * install bcrypt
+    * hash password
+16. Login
+    * Find user by username
+    * Validate password with hash
+17. Generate jwt token
+    * install jsonwebtoken
+    * promisify jsonwebtoken(optional)
+    * create secret
+    * generate token in manager.login
+18. Return token in cookie
+    * install cookie-parser
+    * config cookie-parser (index.js)
+    * set cookie with token
+19. Logout
+20. Authentication middleware
+    * create base middleware
+    * use middleware
+    * implement auth middleware
+    * attach decodedToken to request
+    * handle invdalid token
+21. Authorization middleware
+22.Dynmaci navigation
+    * add conditional in main layout
+    * add to res locals
+23. Error handling
+    * add 404 page
+    * redirect missing route to 404
+    * add global error handler (optionals)
