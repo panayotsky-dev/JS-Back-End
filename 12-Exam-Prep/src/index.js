@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 
 const {auth} = require('./middlewares/authMiddleware') //20.2
-
+const {errorHandler} = require('./middlewares/errorHandlerMiddleware')
 const routes = require('./routes')//r
 
 const app = express();//e
@@ -33,5 +33,6 @@ app.use(express.urlencoded({extended:false}))//bodyparser
 app.use(cookieParser())// 18.2
 app.use(auth) //20.2
 app.use(routes)//r
+app.use(errorHandler) //23.5
 
 app.listen(5000,console.log('Server is listening on port 5000'))
